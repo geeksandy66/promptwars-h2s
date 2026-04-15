@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Mobility Intelligence – Safe Route Recommender</title>
+  <meta name="description" content="AI-powered safe route recommender for urban commuters. Analyzes crime rate, lighting and traffic to suggest the safest path." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <div class="app-wrapper">
+
+    <!-- ── HEADER ── -->
+    <header class="header">
+      <div class="header-icon">🛡️</div>
+      <h1 class="header-title">Smart Mobility Intelligence</h1>
+      <p class="header-subtitle">AI-Powered Safe Route Recommender</p>
+    </header>
+
+    <!-- ── INPUT SECTION ── -->
+    <section class="input-card glass" aria-label="Route input form">
+
+      <div class="input-group">
+        <label for="source-input" class="input-label">
+          <span class="label-icon">📍</span> Starting Point
+        </label>
+        <input
+          id="source-input"
+          type="text"
+          class="text-input"
+          placeholder="e.g. Central Station"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="dest-input" class="input-label">
+          <span class="label-icon">🏁</span> Destination
+        </label>
+        <input
+          id="dest-input"
+          type="text"
+          class="text-input"
+          placeholder="e.g. Airport Terminal 2"
+          autocomplete="off"
+        />
+      </div>
+
+      <button id="find-btn" class="find-btn" onclick="findSafeRoute()">
+        <span class="btn-icon">🔍</span> Find Safe Route
+      </button>
+
+    </section>
+
+    <!-- ── LOADING ANIMATION ── -->
+    <div id="loading" class="loading hidden" aria-live="polite">
+      <div class="spinner"></div>
+      <p class="loading-text">Analyzing routes<span class="dots"></span></p>
+      <p class="loading-sub">Scanning crime data · Checking lighting · Monitoring traffic</p>
+    </div>
+
+    <!-- ── RESULTS SECTION ── -->
+    <section id="results" class="results hidden" aria-label="Route results">
+      <h2 class="results-heading">Route Analysis Results</h2>
+      <p id="results-meta" class="results-meta"></p>
+      <div id="cards-container" class="cards-container"></div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+      <p>Built for hackathons · Simulated data · 2024</p>
+    </footer>
+
+  </div>
+
+  <!-- Main script -->
+  <script src="script.js"></script>
+</body>
+</html>
